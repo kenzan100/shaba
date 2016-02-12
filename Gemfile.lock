@@ -1,7 +1,11 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    byebug (8.2.2)
     diff-lcs (1.2.5)
+    hanami-utils (0.7.1)
+    hanami-validations (0.5.0)
+      hanami-utils (~> 0.7)
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
@@ -20,6 +24,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  byebug
+  hanami-validations
   rspec
 
 BUNDLED WITH
