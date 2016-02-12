@@ -13,8 +13,12 @@ RSpec.describe Memo do
       it { expect(subject.body).to eq 'hello again' }
     end
 
-    context 'when blank' do
-      it { expect { subject.body = '' }.to raise_error(Memo::BodyMustBePresentError) }
+    context 'with OreHanami::Validations' do
+      it { is_expected.to be_valid }
+      context 'when body blank' do
+        before { subject.body = '' }
+        it { is_expected.to be_invalid }
+      end
     end
   end
 end
