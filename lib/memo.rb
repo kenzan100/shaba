@@ -2,14 +2,12 @@ require 'validators/ore_validations'
 require 'byebug'
 class Memo
   include OreHanami::Validations
-
+  validates :body, presence: true
   attr_accessor :body
 
   def initialize(body_text)
     self.body = body_text
   end
-
-  validates :body, presence: true
 
   def body=(body_text)
     organized_text = organize(body_text)
