@@ -1,11 +1,11 @@
 require 'memo'
-RSpec.describe Memo do
-  subject { Memo.new('hello') }
+RSpec.describe Shaba::Memo do
+  subject { described_class.new('hello') }
   describe '#initialize' do
     it { expect { subject }.not_to raise_error }
   end
 
-  describe 'body attribute' do
+  describe '#body' do
     it { expect(subject.body).to eq 'hello' }
 
     context 'when updating' do
