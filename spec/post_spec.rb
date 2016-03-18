@@ -1,5 +1,4 @@
-require 'memo'
-require 'post'
+require 'shaba'
 RSpec.describe Shaba::Post do
   let(:memo_class)  { Shaba::Memo }
   let(:first_memo)  { memo_class.new('1st') }

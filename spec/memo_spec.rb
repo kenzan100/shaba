@@ -1,4 +1,4 @@
-require 'memo'
+require 'shaba'
 RSpec.describe Shaba::Memo do
   subject { described_class.new('hello') }
   describe '#initialize' do

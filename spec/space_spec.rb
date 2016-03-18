@@ -1,6 +1,4 @@
-require 'memo'
-require 'post'
-require 'space'
+require 'shaba'
 RSpec.describe Shaba::Space do
   let(:user) { instance_double("User", name: 'yuta') }
   subject { described_class.new(user: user, type: :draft) }

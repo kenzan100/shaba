@@ -1,6 +1,4 @@
-require 'memo'
-require 'post'
-require 'space'
+require 'shaba'
 RSpec.describe 'integration flow' do
   it 'user writes memo for the first time' do
     user   = instance_double("User", name: 'yuta')
