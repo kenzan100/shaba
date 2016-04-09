@@ -1,3 +1,4 @@
+require "tilt"
 module Web
   class Application
     def call(env)
@@ -16,7 +17,13 @@ module Web
       def routes
         {
           get: {
-            "/": ->(env) { [200, {}, ["Write New Memo"]] }
+            "/": ->(env) {
+              [
+                200,
+                {},
+                [ Tilt.new('apps/web/templates/write_memo.html.erb').render ]
+              ]
+            }
           }
         }
       end
