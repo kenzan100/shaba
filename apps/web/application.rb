@@ -4,6 +4,7 @@ module Web
     def call(env)
       method = env["REQUEST_METHOD"].downcase
       path   = env["PATH_INFO"]
+      return [200, {}, [""]] if path == "/favicon.ico"
       req    = Rack::Request.new(env)
       ret    = actions[path.to_sym].call(req)
       routes[method.to_sym][path.to_sym].call(env, ret)
@@ -22,7 +23,8 @@ module Web
     class << self
       def actions
         {
-          "/": ->(req) { },
+          "/": ->(req) {
+          },
           "/memos": ->(req) {
             Shaba::Memo.new req.params["memo_content"]
           }
@@ -39,7 +41,7 @@ module Web
             "/memos": ->(env, ret) {
               [
                 200,
-                {},
+                { "Content-Type" => "text/html" },
                 [ "memo #{ret.body} saved" ]
               ]
             }
@@ -48,7 +50,7 @@ module Web
             "/": ->(env, ret) {
               [
                 200,
-                {},
+                { "Content-Type" => "text/html" },
                 [ Tilt.new('apps/web/templates/write_memo.html.erb').render ]
               ]
             }
@@ -57,4 +59,14 @@ module Web
       end
     end
   end
+end
+
+if $0 == __FILE__
+  require_relative "../../config/environment"
+  require 'rack'
+  require 'byebug'
+  Rack::Server.start(
+    app:  Web::Application.new,
+    Port: 9292
+  )
 end
