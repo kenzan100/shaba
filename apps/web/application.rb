@@ -4,7 +4,13 @@ module Web
     def call(env)
       method = env["REQUEST_METHOD"].downcase
       path   = env["PATH_INFO"]
-      routes[method.to_sym][path.to_sym].call(env)
+      req    = Rack::Request.new(env)
+      ret    = actions[path.to_sym].call(req)
+      routes[method.to_sym][path.to_sym].call(env, ret)
+    end
+
+    def actions
+      Controller.actions
     end
 
     def routes
@@ -12,12 +18,34 @@ module Web
     end
   end
 
+  class Controller
+    class << self
+      def actions
+        {
+          "/": ->(req) { },
+          "/memos": ->(req) {
+            Shaba::Memo.new req.params["memo_content"]
+          }
+        }
+      end
+    end
+  end
+
   class Router
     class << self
       def routes
         {
+          post: {
+            "/memos": ->(env, ret) {
+              [
+                200,
+                {},
+                [ "memo #{ret.body} saved" ]
+              ]
+            }
+          },
           get: {
-            "/": ->(env) {
+            "/": ->(env, ret) {
               [
                 200,
                 {},
