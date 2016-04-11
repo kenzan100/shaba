@@ -42,7 +42,7 @@ module Web
               [
                 200,
                 { "Content-Type" => "text/html" },
-                [ "memo #{ret.body} saved" ]
+                [ "memo saved.<br/> #{ret.body}" ]
               ]
             }
           },
