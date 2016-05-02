@@ -12,13 +12,5 @@ RSpec.describe Shaba::Memo do
       before { subject.body = 'hello again' }
       it { expect(subject.body).to eq 'hello again' }
     end
-
-    context 'with OreHanami::Validations' do
-      it { is_expected.to be_valid }
-      context 'when body blank' do
-        before { subject.body = '' }
-        it { is_expected.to be_invalid }
-      end
-    end
   end
 end

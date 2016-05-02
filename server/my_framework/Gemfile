@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
+gem 'shaba', path: '~/shaba/server/gems/shaba'
+
 gem 'byebug'
 gem 'hanami-validations'
 

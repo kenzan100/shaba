@@ -1,4 +1,4 @@
-server/vendor/bundle
+**/vendor/bundle/
 Yays
 electron-quick-start
 node_modules

@@ -1,9 +1,5 @@
-require 'validators/ore_validations'
-require 'byebug'
 module Shaba
   class Memo
-    include OreHanami::Validations
-    validates :body, presence: true
     attr_accessor :body
 
     def initialize(body_text)
