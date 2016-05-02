@@ -1,4 +1,5 @@
 require "tilt"
+require "shaba"
 module Web
   class Application
     def call(env)
