@@ -2,6 +2,7 @@
 
 .memoHR {
   &-actions-insert {
+    width: 1.4em;
     @extend .fa;
     @extend .fa-plus;
   }
@@ -9,9 +10,19 @@
 
 .memoBox {
   &-memo {
+    margin: 1.6em 1em;
+  }
+}
+
+.memoActionBox {
+  &-top, &-bottom {
+    > * {
+      @extend .fa;
+      @extend .fa-fw;
+      border: 1px solid light-gray;
+    }
   }
   &-actions {
-    @extend .fa;
     &-up     { @extend .fa-chevron-up; }
     &-down   { @extend .fa-chevron-down; }
     &-edit   { @extend .fa-pencil-square-o; }

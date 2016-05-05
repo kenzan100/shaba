@@ -1,0 +1,10 @@
+.l-grid {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch; }
+  .l-grid-flex-1 {
+    flex: 1; }
+  .l-grid--column {
+    flex-direction: column; }
+
+/*# sourceMappingURL=layout.css.map */

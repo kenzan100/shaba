@@ -2,29 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
   <title>Basic Shaba Template</title>
+
+  <link rel="stylesheet" href="css/typography.css" media="all">
+  <link rel="stylesheet" href="css/layout.css" media="all">
   <link rel="stylesheet" href="css/memos.css" media="all">
 </head>
 <body>
   <div class="memos">
-    <div class="memoHR">
-      <hr/>
+    <div class="memoHR l-grid">
       <span class="memoHR-actions-insert"></span>
+      <hr   class="memoHR-hr l-grid-flex-1"/>
     </div>
-    <div class="memoBox">
-      <div class="memoBox-memo">
+    <div class="memoBox l-grid">
+      <div class="memoBox-memo l-grid-flex-1">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </div>
-      <div class="memoBox-actions">
-        <span class="memoBox-actions-up"></span>
-        <span class="memoBox-actions-down"></span>
-        <span class="memoBox-actions-edit"></span>
-        <span class="memoBox-actions-delete"></span>
+      <div class="memoActionBox l-grid l-grid--column">
+        <div class="memoActionBox-top">
+          <span class="memoActionBox-actions-up"></span>
+          <span class="memoActionBox-actions-down"></span>
+        </div>
+        <div class="memoActionBox-bottom">
+          <span class="memoActionBox-actions-edit"></span>
+          <span class="memoActionBox-actions-delete"></span>
+        </div>
       </div>
     </div>
-    <div class="memoHR">
-      <hr/>
+    <div class="memoHR l-grid">
       <span class="memoHR-actions-insert"></span>
+      <hr   class="memoHR-hr l-grid-flex-1"/>
     </div>
   </div>
 </body>
