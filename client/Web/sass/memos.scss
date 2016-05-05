@@ -1,0 +1,20 @@
+@import "../font-awesome/sass/font-awesome";
+
+.memoHR {
+  &-actions-insert {
+    @extend .fa;
+    @extend .fa-plus;
+  }
+}
+
+.memoBox {
+  &-memo {
+  }
+  &-actions {
+    @extend .fa;
+    &-up     { @extend .fa-chevron-up; }
+    &-down   { @extend .fa-chevron-down; }
+    &-edit   { @extend .fa-pencil-square-o; }
+    &-delete { @extend .fa-times; }
+  }
+}

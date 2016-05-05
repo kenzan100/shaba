@@ -2,3 +2,5 @@
 Yays
 electron-quick-start
 node_modules
+*.css.map
+font-awesome
