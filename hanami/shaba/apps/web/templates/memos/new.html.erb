@@ -1,2 +1,12 @@
-<textarea name="" cols="30" rows="10"></textarea>
-<button type="submit">Save</button>
+<%=
+  form_for :memo, '/memos' do
+    div class: 'input' do
+      label     :body
+      text_area :body
+    end
+
+    div class: 'controls' do
+      submit 'Save'
+    end
+  end
+%>
