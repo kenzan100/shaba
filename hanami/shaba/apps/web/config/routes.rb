@@ -3,3 +3,4 @@
 
 get  '/',      to: 'memos#new'
 post '/memos', to: 'memos#create'
+get  '/memos', to: 'memos#index'

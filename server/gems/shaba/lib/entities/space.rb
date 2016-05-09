@@ -1,19 +1,25 @@
 module Shaba
   class Space
-    attr_accessor :posts
-    attr_reader :user, :type
+    attr_accessor :posts, :user, :type
     def initialize(args)
-      self.user = args[:user]
-      self.type = args[:type]
+      self.user  = args[:user]
+      self.type  = args[:type]
+      self.posts = []
     end
 
     def add(post)
       self.posts ||= []
       self.posts << post
+      post
     end
 
-    private
-    attr_writer :user, :type
+    def attributes
+      {
+        user: user,
+        type: type,
+        posts: posts
+      }
+    end
   end
 
   class SpaceManager

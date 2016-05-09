@@ -2,10 +2,10 @@ module Web::Controllers::Memos
   class Create
     include Web::Action
 
-    expose :memo
-
     def call(params)
-      @memo = MemoRepository.create(Memo.new(params[:memo]))
+      memo = Memo.new(params[:memo])
+      draft_space = SpaceManager.add_memo_to_draft_space(memo)
+      SpaceRepository.deep_create(draft_space)
       redirect_to '/memos'
     end
   end

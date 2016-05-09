@@ -1,8 +1,10 @@
 module Shaba
   class Post
-    attr_accessor :memos
+    attr_accessor :memos, :title
     def initialize(*memos)
-      self.memos = memos
+      self.memos = []
+      self.memos = memos unless memos.nil?
+      self.title = "post title"
     end
 
     def reorder(*order_indices)
@@ -16,7 +18,7 @@ module Shaba
     end
 
     def add(memo)
-      self.memos = memos << memo
+      self.memos = (memos || []) << memo
       self
     end
   end
