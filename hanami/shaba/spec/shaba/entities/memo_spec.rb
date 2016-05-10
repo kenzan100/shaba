@@ -1,3 +1,15 @@
 RSpec.describe Memo do
-  # place your tests here
+  subject { described_class.new(body: 'hello') }
+  describe '#initialize' do
+    it { expect { subject }.not_to raise_error }
+  end
+
+  describe '#body' do
+    it { expect(subject.body).to eq 'hello' }
+
+    context 'when updating' do
+      before { subject.body = 'hello again' }
+      it { expect(subject.body).to eq 'hello again' }
+    end
+  end
 end

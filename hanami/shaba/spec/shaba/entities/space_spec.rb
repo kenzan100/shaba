@@ -1,5 +1,4 @@
-require 'shaba'
-RSpec.describe Shaba::Space do
+RSpec.describe Space do
   let(:user) { instance_double("User", name: 'yuta') }
   subject { described_class.new(user: user, type: :draft) }
 
@@ -9,7 +8,7 @@ RSpec.describe Shaba::Space do
   end
 
   describe '#posts' do
-    it { expect(subject.posts).to eq nil }
+    it { expect(subject.posts).to eq [] }
     context 'adding posts' do
       let(:post) { instance_double("Post") }
       before { subject.add(post) }
@@ -18,7 +17,7 @@ RSpec.describe Shaba::Space do
   end
 end
 
-RSpec.describe Shaba::SpaceManager do
+RSpec.describe SpaceManager do
   let(:space_class) { Shaba::Space }
   let(:user) { instance_double("User", name: 'yuta') }
   describe '.construct_for' do
