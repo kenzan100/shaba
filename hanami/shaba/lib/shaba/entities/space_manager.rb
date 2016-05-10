@@ -1,4 +1,4 @@
-class SpaceManager < Shaba::SpaceManager
+class SpaceManager
   class << self
     def add_memo_to_draft_space(memo)
       draft_space = draft_space_for(ENV['USER'])
@@ -8,9 +8,8 @@ class SpaceManager < Shaba::SpaceManager
     end
 
     def construct_for(user_key)
-      super.map { |shaba_space|
-        Space.new shaba_space.attributes
-      }
+      [Space.new(user: user_key, type: :draft),
+       Space.new(user: user_key, type: :private)]
     end
 
     def draft_space_for(user_key)
