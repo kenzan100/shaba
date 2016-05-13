@@ -6,3 +6,4 @@ node_modules
 font-awesome
 **/public/assets*
 **/tmp
+**/log
