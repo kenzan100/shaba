@@ -2,10 +2,11 @@ module Web::Controllers::Memos
   class Index
     include Web::Action
 
-    expose :memos
+    expose :posts
 
     def call(params)
-      @memos = MemoRepository.all
+      draft_space = Space::FindDraft.new.run
+      @posts = draft_space.posts
     end
   end
 end

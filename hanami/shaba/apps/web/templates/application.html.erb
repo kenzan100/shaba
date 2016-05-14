@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Shaba</title>
-    <%= favicon %>
-  </head>
-  <body>
-    <%= yield %>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>Shaba - you're a better writer.</title>
+
+  <link href="/assets/favicon.ico?v2" rel="shortcut icon" type="image/x-icon">
+
+  <%= stylesheet 'typography' %>
+  <%= stylesheet 'layout' %>
+  <%= stylesheet 'memos' %>
+</head>
+<body>
+  <%= yield %>
+</body>
 </html>

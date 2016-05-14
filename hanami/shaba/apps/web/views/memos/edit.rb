@@ -1,17 +1,18 @@
 module Web::Views::Memos
-  class New
+  class Edit
     include Web::View
+    template "memos/new"
 
     def path
-      routes.memos_path
+      routes.memo_path(id: memo.id)
     end
 
     def method
-      :post
+      :patch
     end
 
     def values
-      { }
+      { memo: memo }
     end
   end
 end

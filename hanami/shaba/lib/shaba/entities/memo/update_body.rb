@@ -1,7 +1,7 @@
 module Memo
-  class AddTo
-    def initialize(post)
-      @memo = MemoRepository.new(post_id: post.id)
+  class UpdateBody
+    def initialize(memo_id)
+      @memo = MemoRepository.find(id: memo_id)
     end
 
     def run(params)
