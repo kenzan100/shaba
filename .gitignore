@@ -7,3 +7,6 @@ font-awesome
 **/public/assets*
 **/tmp
 **/log
+
+.env.development
+.env.test

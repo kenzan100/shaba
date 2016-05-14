@@ -1,0 +1,26 @@
+.memoHR {
+  &-actions-insert {
+    width: 1.4em;
+    &:after { content: "\002B"; }
+  }
+}
+
+.memoBox {
+  &-memo {
+    margin: 1.6em 1em;
+  }
+}
+
+.memoActionBox {
+  &-top, &-bottom {
+    > * {
+      border: 1px solid light-gray;
+    }
+  }
+  &-actions {
+    &-up:after     { content: "\25B2"; }
+    &-down:after   { content: "\25BC"; }
+    &-edit:after   { content: "\270F"; }
+    &-delete:after { content: "\00D7"; }
+  }
+}
