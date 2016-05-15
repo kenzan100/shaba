@@ -7,6 +7,7 @@ module Web::Controllers::Memos
     def call(params)
       draft_space = Space::Find.new(:draft).run
       @posts = draft_space.posts_with_memos
+      redirect_to routes.new_memo_path and return if @posts.empty?
     end
   end
 end
