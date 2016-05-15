@@ -13,7 +13,8 @@ module Memo
     private
 
     def reorder(params)
-      return unless params["up_or_down"] && params["next_memo_id"]
+      return if !params["up_or_down"]   || params["up_or_down"].empty?
+      return if !params["next_memo_id"] || params["next_memo_id"].empty?
 
       memo_moving_past = MemoRepository.find(id: params["next_memo_id"])
       conf = order_config[params["up_or_down"].to_sym]

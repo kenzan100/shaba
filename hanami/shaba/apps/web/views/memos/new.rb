@@ -11,7 +11,7 @@ module Web::Views::Memos
     end
 
     def values
-      { }
+      { memo: memo }
     end
   end
 end
