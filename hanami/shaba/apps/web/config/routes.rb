@@ -3,8 +3,4 @@
 
 get  '/', to: 'memos#new'
 
-resources :memos do
-  member do
-    patch :reorder
-  end
-end
+resources :memos

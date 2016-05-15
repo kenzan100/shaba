@@ -2,11 +2,11 @@ module Web::Controllers::Memos
   class Index
     include Web::Action
 
-    expose :posts
+    expose :memos
 
     def call(params)
       draft_space = Space::FindDraft.new.run
-      @posts = draft_space.posts
+      @memos = draft_space.posts.flat_map { |p| Post::OrderedMemo.new(p).run }
     end
   end
 end

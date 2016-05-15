@@ -1,37 +1,30 @@
-<% posts.each do |post| %>
-  <% post.memos.each do |memo| %>
-    <div class="memos">
-      <div class="memoHR l-grid">
-        <%= link_to '', routes.new_memo_path, class: "memoHR-actions-insert" %>
-        <hr class="memoHR-hr l-grid-flex-1"/>
+<% memos.each_with_index do |memo, i| %>
+  <div class="memos">
+    <div class="memoHR l-grid">
+      <%= link_to '', routes.new_memo_path, class: "memoHR-actions-insert" %>
+      <hr class="memoHR-hr l-grid-flex-1"/>
+    </div>
+    <div class="memoBox l-grid">
+      <div class="memoBox-memo l-grid-flex-1">
+        <%= memo.body %>
+        <%= "[#{memo.post_id}, #{memo.sort_order}]" %>
       </div>
-      <div class="memoBox l-grid">
-        <div class="memoBox-memo l-grid-flex-1">
-          <%= memo.body %>
+      <div class="memoActionBox l-grid l-grid--column">
+        <div class="memoActionBox-top">
+          <%= move_up_form(memo.id, memos[i-1].id) if memos[i-1] %>
+          <%= move_down_form(memo.id, memos[i+1].id) if memos[i+1] %>
         </div>
-        <div class="memoActionBox l-grid l-grid--column">
-          <div class="memoActionBox-top">
-            <% %w(up down).each do |up_or_down| %>
-              <%=
-                form_for :memo, routes.reorder_memo_path(memo.id) do
-                  hidden_field :up_or_down, value: up_or_down
-                  submit '', class: "memoActionBox-actions-#{up_or_down}"
-                end
-              %>
-            <% end %>
-          </div>
-          <div class="memoActionBox-bottom">
-            <%= link_to '', routes.edit_memo_path(memo.id), class: "memoActionBox-actions-edit" %>
-            <%=
-              form_for :memo, routes.memo_path(memo.id), method: :delete do
-                submit '', class: "memoActionBox-actions-delete"
-              end
-            %>
-          </div>
+        <div class="memoActionBox-bottom">
+          <%= link_to '', routes.edit_memo_path(memo.id), class: "memoActionBox-actions-edit" %>
+          <%=
+            form_for :memo, routes.memo_path(memo.id), method: :delete do
+              submit '', class: "memoActionBox-actions-delete"
+            end
+          %>
         </div>
       </div>
     </div>
-  <% end %>
+  </div>
 <% end %>
 <div class="memoHR l-grid">
   <%= link_to '', routes.new_memo_path, class: "memoHR-actions-insert" %>
