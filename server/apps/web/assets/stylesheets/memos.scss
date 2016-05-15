@@ -1,3 +1,5 @@
+@import 'variables';
+
 .memoHR {
   &-actions-insert {
     width: 1.4em;
@@ -22,5 +24,16 @@
     &-down:after   { content: "\25BC"; }
     &-edit:after   { content: "\270F"; }
     &-delete:after { content: "\00D7"; }
+  }
+}
+
+.memoWriteBox {
+  & > form {
+    width: 50%;
+    & textarea {
+      font-size: $font-size-text-input;
+      width: 100%;
+      height: 8em;
+    }
   }
 }

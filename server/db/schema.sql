@@ -2,7 +2,7 @@ CREATE TABLE memos (
   id BIGSERIAL PRIMARY KEY,
   post_id    integer NOT NULL,
   sort_order BIGSERIAL,
-  body character varying(255) NOT NULL
+  body text NOT NULL
 );
 CREATE INDEX memos_sort_order ON memos (sort_order);
 

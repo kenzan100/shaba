@@ -1,15 +1,16 @@
-<%=
-  form_for :memo, path, method: method, values: values do
-    hidden_field :up_or_down
-    hidden_field :next_memo_id
+<div class="memoWriteBox l-grid">
+  <%=
+    form_for :memo, path, method: method, values: values do
+      hidden_field :up_or_down
+      hidden_field :next_memo_id
 
-    div class: 'input' do
-      label     :body
-      text_area :body
-    end
+      div class: 'input' do
+        text_area :body
+      end
 
-    div class: 'controls' do
-      submit 'Save'
+      div class: 'controls' do
+        submit 'Save'
+      end
     end
-  end
-%>
+  %>
+</div>

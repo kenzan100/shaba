@@ -5,7 +5,7 @@ module Memo
     end
 
     def run(params)
-      Organizer.new(@memo).save_with(params)
+      Splitter.new(@memo, params).save_all
     end
   end
 end
