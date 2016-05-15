@@ -1,11 +1,26 @@
-<h1>Posts</h1>
-<% posts.each do |post| %>
-  <h2><%= post.title %></h2>
-  <% memos = post.ordered_memos %>
-  <% memos.each do |memo| %>
-    <div>
-      <%= memo.body %>
+<div class="l-grid l-grid--box l-grid--column">
+  <% posts.each do |post| %>
+    <div class="memoPreviewBox accordion">
+      <input type="checkbox" checked class="accordion-checkbox">
+      <h2><%= post.title %></h2>
+      <% memos = post.ordered_memos %>
+      <div class="accordion-content">
+        <div>
+          <% memos.each do |memo| %>
+            <%= memo.body %>
+            <br/>
+            <br/>
+          <% end %>
+        </div>
+        <div class="l-grid">
+          <%= link_to 'Edit', routes.edit_post_path(post.id) %>
+          <%=
+            form_for :post, routes.post_path(post.id), method: :delete do
+              submit 'Delete'
+            end
+          %>
+      </div>
+      </div>
     </div>
   <% end %>
-  <%= link_to 'Edit', routes.edit_post_path(post.id) %>
-<% end %>
+</div>

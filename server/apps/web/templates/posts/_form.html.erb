@@ -1,8 +1,7 @@
 <%=
   form_for :post, path, method: method, values: values do
     div class: 'input' do
-      label     :title
-      text_area :title
+      text_field :title
     end
 
     div class: 'controls' do

@@ -31,9 +31,19 @@
   & > form {
     width: 50%;
     & textarea {
-      font-size: $font-size-text-input;
+      font-size: $font-size-textarea-input;
       width: 100%;
       height: 8em;
     }
+  }
+}
+
+.memoPreviewBox {
+  margin: 0 0 20px 0;
+  > div {
+    font-size: .9rem;
+    width: $box-base-size;
+    margin: 0 10px;
+    line-height: 1.53;
   }
 }

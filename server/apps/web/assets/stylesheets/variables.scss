@@ -1,10 +1,13 @@
-$font-headline: 'Sofia Pro', 'Avenir', Helvetica, Geneva, sans-serif;
-$font-body: 'Minion Pro', Georgia, Times, serif;
+$font-body: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', Arial, sans-serif;
+$font-headline: $font-body;
 $font-monospace: 'Menlo', Monaco, monospace;
 
 $font-size-base: 17px;
 $font-size-body: 1rem;
-$font-size-text-input: 0.9rem;
+$font-size-textarea-input: 0.9rem;
+$font-size-textfield-input: 1.2rem;
 
-$color-text:       #000;
+$box-base-size: 600px;
+
+$color-text:       #6e6e6e;
 $color-background: #fff;

@@ -1,0 +1,12 @@
+@import 'variables';
+
+.postTitleEditBox {
+  & > form {
+    width: $box-base-size;
+    & input[type='text'] {
+      width: 100%;
+      font-size: $font-size-textfield-input;
+    }
+  }
+  margin: 0 0 15px 0;
+}

@@ -1,9 +1,10 @@
+@import "variables";
+
 .l-grid {
   display:   flex;
 
   justify-content: space-around;
   align-items: stretch;
-
 
   &-flex-1 {
     flex: 1;
@@ -11,5 +12,12 @@
 
   &--column {
     flex-direction:  column;
+  }
+
+  &--box {
+    align-items: center;
+    & > * {
+      width: $box-base-size;
+    }
   }
 }

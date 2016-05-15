@@ -6,7 +6,7 @@ module Web::Controllers::Spaces
 
     def call(params)
       space = Space::Find.new(params[:type]).run
-      @posts = space.posts
+      @posts = space.ordered_posts
     end
   end
 end
