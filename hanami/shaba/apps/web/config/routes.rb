@@ -4,3 +4,6 @@
 get  '/', to: 'memos#new'
 
 resources :memos
+resources :posts
+
+get '/spaces/:type', to: 'spaces#show', as: :space

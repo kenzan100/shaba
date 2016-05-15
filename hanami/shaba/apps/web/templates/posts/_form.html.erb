@@ -1,0 +1,12 @@
+<%=
+  form_for :post, path, method: method, values: values do
+    div class: 'input' do
+      label     :title
+      text_area :title
+    end
+
+    div class: 'controls' do
+      submit 'Save'
+    end
+  end
+%>

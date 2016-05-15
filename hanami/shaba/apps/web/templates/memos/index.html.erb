@@ -1,32 +1,36 @@
-<% memos.each_with_index do |memo, i| %>
-  <div class="memos">
-    <div class="memoHR l-grid">
-      <%= insert_above_link(memo) %>
-      <hr class="memoHR-hr l-grid-flex-1"/>
-    </div>
-    <div class="memoBox l-grid">
-      <div class="memoBox-memo l-grid-flex-1">
-        <%= memo.body %>
-        <%= "[#{memo.post_id}, #{memo.sort_order}]" %>
+<% posts.each do |post| %>
+  <%= link_to 'Save as a Post', routes.edit_post_path(post.id) %>
+  <% memos = post.ordered_memos %>
+  <% memos.each_with_index do |memo, i| %>
+    <div class="memos">
+      <div class="memoHR l-grid">
+        <%= insert_above_link(memo) %>
+        <hr class="memoHR-hr l-grid-flex-1"/>
       </div>
-      <div class="memoActionBox l-grid l-grid--column">
-        <div class="memoActionBox-top">
-          <%= move_up_form(memo, memos[i-1]) if memos.first != memo %>
-          <%= move_down_form(memo, memos[i+1]) %>
+      <div class="memoBox l-grid">
+        <div class="memoBox-memo l-grid-flex-1">
+          <%= memo.body %>
+          <%= "[#{memo.post_id}, #{memo.sort_order}]" %>
         </div>
-        <div class="memoActionBox-bottom">
-          <%= link_to '', routes.edit_memo_path(memo.id), class: "memoActionBox-actions-edit" %>
-          <%=
-            form_for :memo, routes.memo_path(memo.id), method: :delete do
-              submit '', class: "memoActionBox-actions-delete"
-            end
-          %>
+        <div class="memoActionBox l-grid l-grid--column">
+          <div class="memoActionBox-top">
+            <%= move_up_form(memo, memos[i-1]) if memos.first != memo %>
+            <%= move_down_form(memo, memos[i+1]) %>
+          </div>
+          <div class="memoActionBox-bottom">
+            <%= link_to '', routes.edit_memo_path(memo.id), class: "memoActionBox-actions-edit" %>
+            <%=
+              form_for :memo, routes.memo_path(memo.id), method: :delete do
+                submit '', class: "memoActionBox-actions-delete"
+              end
+            %>
+          </div>
         </div>
       </div>
     </div>
+  <% end %>
+  <div class="memoHR l-grid">
+    <%= insert_below_link(memos[-1]) %>
+    <hr class="memoHR-hr l-grid-flex-1"/>
   </div>
 <% end %>
-<div class="memoHR l-grid">
-  <%= insert_below_link(memos[-1]) %>
-  <hr class="memoHR-hr l-grid-flex-1"/>
-</div>

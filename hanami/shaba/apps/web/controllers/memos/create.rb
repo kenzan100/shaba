@@ -3,7 +3,7 @@ module Web::Controllers::Memos
     include Web::Action
 
     def call(params)
-      space = Space::FindDraft.new.run
+      space = Space::Find.new(:draft).run
       post  = Post::SmartAdd.new(space).run(params[:memo])
       Memo::AddTo.new(post).run(params[:memo])
       redirect_to '/memos'
