@@ -17,8 +17,10 @@
   <%= stylesheet 'posts' %>
   <%= stylesheet 'accordion' %>
 </head>
-<body>
-  <%= render partial: "shared/navigation" %>
-  <%= yield %>
+<body class="Site">
+  <div class="Container">
+    <%= render partial: "shared/navigation" %>
+    <%= yield %>
+  </div>
 </body>
 </html>

@@ -1,13 +1,15 @@
-<div class="l-grid postTitleEditBox">
-  <%= render partial: "form" %>
-</div>
+<div class="pageContainer">
+  <div class="l-grid postTitleEditBox">
+    <%= render partial: "form" %>
+  </div>
 
-<div class="l-grid memoPreviewBox">
-  <div>
-    <% memos.each do |memo| %>
-      <%= memo.body %>
-      <br/>
-      <br/>
-    <% end %>
+  <div class="l-grid memoPreviewBox">
+    <div>
+      <% memos.each do |memo| %>
+        <%= memo.body %>
+        <br/>
+        <br/>
+      <% end %>
+    </div>
   </div>
 </div>

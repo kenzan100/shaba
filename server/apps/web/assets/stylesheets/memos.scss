@@ -60,12 +60,18 @@
   }
 }
 
+.memoPreviewBoxContainer {
+  max-width: $box-base-size;
+  margin: 0 auto;
+}
+
 .memoPreviewBox {
-  margin: 0 0 20px 0;
+  margin: 0 20px 20px;
   > div {
+    justicy-content: center;
     font-size: .9rem;
-    width: $box-base-size;
-    margin: 0 10px;
+    max-width: 575px;
+    margin: 0 4px;
     line-height: 1.53;
   }
 }

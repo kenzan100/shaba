@@ -1,5 +1,21 @@
 @import "variables";
 
+.Site {
+  dispaly: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.Container {
+  max-width: 50em;
+  margin: 0 auto;
+}
+
+.pageContainer {
+  margin: 0 auto;
+  max-width: $box-base-size;
+}
+
 .l-grid {
   display:   flex;
 
@@ -16,8 +32,5 @@
 
   &--box {
     align-items: center;
-    & > * {
-      width: $box-base-size;
-    }
   }
 }

@@ -4,13 +4,18 @@
   & > form {
     width: $box-base-size;
     & input[type='text'] {
-      width: 100%;
+      width: 94%;
       font-size: $font-size-textfield-input;
+      padding: 4px 10px;
+    }
+    & .controls {
+      margin: 6px;
     }
   }
   margin: 0 0 15px 0;
 }
 
 .postMemosEditBox {
+  width: 90%;
   margin: 0 0 40px 0;
 }
