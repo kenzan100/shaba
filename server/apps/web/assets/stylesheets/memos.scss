@@ -3,7 +3,14 @@
 .memoHR {
   &-actions-insert {
     width: 1.4em;
-    &:after { content: "\002B"; }
+    color: $color-strong;
+    text-decoration: none;
+    margin: -6px;
+    &:after { font-size: 22px; content: "\002B"; }
+  }
+  &-hr {
+    border: 1px solid $color-very-light;
+    align-self: flex-end;
   }
 }
 
@@ -15,15 +22,30 @@
 
 .memoActionBox {
   &-top, &-bottom {
-    > * {
-      border: 1px solid light-gray;
+    & button {
+      color: $color-strong;
+      text-decoration: none;
     }
   }
   &-actions {
-    &-up:after     { content: "\25B2"; }
-    &-down:after   { content: "\25BC"; }
-    &-edit:after   { content: "\270F"; }
-    &-delete:after { content: "\00D7"; }
+    &-up:after {
+      font-size: 12px;
+      content: "\25B2";
+    }
+    &-down:after {
+      font-size: 12px;
+      content: "\25BC";
+    }
+    &-edit {
+      text-decoration: none;
+      padding: 4px;
+      color: $color-strong;
+      &:after { content: "\270F"; }
+    }
+    &-delete:after {
+      font-size: 14px;
+      content: "\00D7";
+    }
   }
 }
 
