@@ -15,6 +15,7 @@ end
 
 group :test, :development do
   gem 'byebug'
+  gem 'compass'
 end
 
 group :production do

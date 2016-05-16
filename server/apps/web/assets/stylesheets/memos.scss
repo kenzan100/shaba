@@ -1,3 +1,4 @@
+@import "compass/css3";
 @import 'variables';
 
 .memoHR {
@@ -10,7 +11,7 @@
   }
   &-hr {
     border: 1px solid $color-very-light;
-    align-self: flex-end;
+    @include align-self(flex-end);
   }
 }
 
@@ -51,10 +52,10 @@
 
 .memoWriteBox {
   & > form {
-    width: 50%;
+    width: 80%;
     & textarea {
       font-size: $font-size-textarea-input;
-      width: 100%;
+      width: 97%;
       height: 8em;
     }
   }
@@ -67,9 +68,9 @@
 
 .memoPreviewBox {
   margin: 0 20px 20px;
-  justify-content: flex-start;
+  @include justify-content(flex-start);
   > div {
-    justicy-content: center;
+    @include justify-content(center);
     font-size: .9rem;
     max-width: 575px;
     margin: 0 4px;

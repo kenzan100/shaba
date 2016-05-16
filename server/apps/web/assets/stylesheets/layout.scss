@@ -1,13 +1,15 @@
+@import "compass/css3";
 @import "variables";
 
 .Site {
-  dispaly: flex;
-  flex-direction: column;
+  @include display-flex;
+  @include flex-direction(column);
   height: 100%;
 }
 
 .Container {
   max-width: 50em;
+  min-width: 19em;
   margin: 0 auto;
 }
 
@@ -17,20 +19,19 @@
 }
 
 .l-grid {
-  display:   flex;
-
-  justify-content: space-around;
-  align-items: stretch;
+  @include display-flex;
+  @include justify-content(space-around);
+  @include align-items(stretch);
 
   &-flex-1 {
-    flex: 1;
+    @include flex(1);
   }
 
   &--column {
-    flex-direction:  column;
+    @include flex-direction(column);
   }
 
   &--box {
-    align-items: center;
+    @include align-items(center);
   }
 }
